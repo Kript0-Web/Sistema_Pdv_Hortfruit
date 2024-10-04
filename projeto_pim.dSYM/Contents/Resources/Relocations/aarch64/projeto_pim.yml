@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lucassilva/Documents/Projeto_pim/Projeto-Tim/projeto_pim'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _cadastrarUsuario, symObjAddr: 0x0, symBinAddr: 0x100003D40, symSize: 0x14C }
+  - { offsetInCU: 0x42, offset: 0x42, size: 0x8, addend: 0x0, symName: _cadastrarUsuario, symObjAddr: 0x0, symBinAddr: 0x100003D40, symSize: 0x14C }
+  - { offsetInCU: 0x74, offset: 0x74, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x14C, symBinAddr: 0x100003E8C, symSize: 0x2C }
+...
