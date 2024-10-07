@@ -2,7 +2,9 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/lucassilva/Documents/Projeto_pim/Projeto-Tim/projeto_pim'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _cadastrarUsuario, symObjAddr: 0x0, symBinAddr: 0x100003D40, symSize: 0x14C }
-  - { offsetInCU: 0x42, offset: 0x42, size: 0x8, addend: 0x0, symName: _cadastrarUsuario, symObjAddr: 0x0, symBinAddr: 0x100003D40, symSize: 0x14C }
-  - { offsetInCU: 0x74, offset: 0x74, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x14C, symBinAddr: 0x100003E8C, symSize: 0x2C }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _fazerLogin, symObjAddr: 0x0, symBinAddr: 0x1000038A4, symSize: 0x104 }
+  - { offsetInCU: 0x42, offset: 0x42, size: 0x8, addend: 0x0, symName: _fazerLogin, symObjAddr: 0x0, symBinAddr: 0x1000038A4, symSize: 0x104 }
+  - { offsetInCU: 0x78, offset: 0x78, size: 0x8, addend: 0x0, symName: _cadastrarUsuario, symObjAddr: 0x104, symBinAddr: 0x1000039A8, symSize: 0x148 }
+  - { offsetInCU: 0xAA, offset: 0xAA, size: 0x8, addend: 0x0, symName: _verificarUsuario, symObjAddr: 0x24C, symBinAddr: 0x100003AF0, symSize: 0x144 }
+  - { offsetInCU: 0xFD, offset: 0xFD, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x390, symBinAddr: 0x100003C34, symSize: 0x11C }
 ...
