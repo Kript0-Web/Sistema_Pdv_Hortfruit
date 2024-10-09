@@ -4,26 +4,27 @@
 
 typedef struct { // estrutura de cadastro
     char nome[50];
-    char senha[50]; // Alterado para string
-    int id;
+    char senha[50]; 
+    char funcionario;
 } Usuario;
 
 // Função para login de primeiro acesso
 int fazerLogin() {
     char usuario[50];
     char senhaAdmin[50];
+    
 
     // Login do admin no primeiro acesso 
     printf("Digite o nome do usuário: ");
-    scanf("%s", usuario); // Corrigido para %s (sem &)
+    scanf("%s", usuario); 
     printf("Digite a senha do usuário: ");
-    scanf("%s", senhaAdmin); // Corrigido para %s (sem &)
-
+    scanf("%s", senhaAdmin); 
+    
     // Validando o login "admin" "admin"
     if (strcmp(usuario, "admin") == 0 && strcmp(senhaAdmin, "admin") == 0) {
         return 1; // Login bem-sucedido
     } else {
-        printf("Login falhou! Login ou senha incorretos.\n"); // Corrigido para printf
+        printf("Login falhou! Login ou senha incorretos.\n"); 
         return 0; // Falha no login
     }
 }
@@ -38,17 +39,31 @@ void cadastrarUsuario() {
     Usuario usuario;
 
     // Coletando dados do usuário
-    printf("Digite o Id do usuário: ");
-    scanf("%d", &usuario.id); 
 
     printf("Digite o nome do usuário: ");
     scanf("%s", usuario.nome); 
 
     printf("Digite a senha do usuário: ");
-    scanf("%s", usuario.senha); // Corrigido para %s (agora uma string)
+    scanf("%s", usuario.senha); 
+    printf("O usuario é funcioanrio? S/N");
+    scanf(" %c", &usuario.funcionario);
+
+    if (usuario.funcionario == 'S' || usuario.funcionario == 's' )
+    {
+        printf("Cadastro de usuario do tipo funcionario concluido");
+    }
+    else if (usuario.funcionario == 'N' || usuario.funcionario == 'n')
+    {
+        printf("Cadastro de usuario do tipo administrador concluido\n");
+    }
+    else
+    {
+        printf("Opção inválida");
+    }
+    
 
     // Salvando as informações no arquivo txt
-    fprintf(arquivo, "%d %s %s\n", usuario.id, usuario.nome, usuario.senha); // Alterado para %s
+    fprintf(arquivo, "%s %s %c\n", usuario.nome, usuario.senha, usuario.funcionario);
     fclose(arquivo);
 
     printf("Cadastro salvo com sucesso!\n");
@@ -63,7 +78,7 @@ int verificarUsuario(char *nome, char *senha) {
 
     Usuario usuario;
     // Lê o arquivo linha por linha
-    while (fscanf(arquivo, "%d %s %s", &usuario.id, usuario.nome, usuario.senha) != EOF) {
+    while (fscanf(arquivo, "%s %s", usuario.nome, usuario.senha) != EOF) {
         // Verifica se o usuário e a senha correspondem
         if (strcmp(usuario.nome, nome) == 0 && strcmp(usuario.senha, senha) == 0) {
             fclose(arquivo);
